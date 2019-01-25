@@ -1,12 +1,17 @@
 package br.com.estudos.comercialapi.model;
 
+import javax.persistence.*;
 import java.math.BigDecimal;
 import java.util.Objects;
 
+@Entity
 public class Oportunidade {
 
+    @Id
+    @GeneratedValue (strategy = GenerationType.IDENTITY)
     private  Long id;
-    private String nomePropecto;
+    @Column(name ="nome_prospecto" )
+    private String nomeProspecto;
     private String descricao;
     private BigDecimal valor;
 
@@ -18,12 +23,12 @@ public class Oportunidade {
         this.id = id;
     }
 
-    public String getNomePropecto() {
-        return nomePropecto;
+    public String getNomeProspecto() {
+        return nomeProspecto;
     }
 
-    public void setNomePropecto(String nomePropecto) {
-        this.nomePropecto = nomePropecto;
+    public void setNomeProspecto(String nomeProspecto) {
+        this.nomeProspecto = nomeProspecto;
     }
 
     public String getDescricao() {
